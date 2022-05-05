@@ -37,6 +37,20 @@
   padding: 20px;
 }
 
+#submit-btn {
+  width: 100px;
+  height: 40px;
+  font-size: 1.3em;
+  background-color: rgb(50, 167, 145);
+  color: white;
+  border-radius: 8px;
+}
+
+#submit-btn:disabled {
+  opacity: 0.5;
+}
+
+
 #footer {
   background-color: black;
   color: white;
