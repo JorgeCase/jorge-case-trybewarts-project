@@ -15,8 +15,36 @@
 
 
 #counter {
-  width: 50px;
-  height: 50px;
-  background-color: red;
+  width: 30px;
+  height: 30px;
+  /* background-color: red; */
+  font-size: 1.3em;
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% + 195px);
+  transform: translate(-100%);
 }
 
+.textAreaContainer {
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.textareaBox {
+  width: 400px;
+  height: 300px;
+  padding: 20px;
+}
+
+#footer {
+  background-color: black;
+  color: white;
+  height: 150px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+}
