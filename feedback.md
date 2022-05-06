@@ -11,7 +11,7 @@
 
 ---
 
-**Nota**: /ESCREVAM SUA NOTA AQUI/
+**Nota**: /10/
 
 ---
 
@@ -23,7 +23,7 @@
 
 ---
 
-**Pessoas integrantes da dupla**: /ESCREVAM SEUS NOMES AQUI/
+**Pessoas integrantes da dupla**: /Danilo Leão, Jorge Casé, Leandro Miranda/
 
 ---
 
