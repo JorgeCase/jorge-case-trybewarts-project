@@ -59,11 +59,13 @@ function removeSelected() {
     family[index].classList.remove('selectedFamily');
   }
 }
+
 function removeSelectedNota() {
   for (let index = 0; index < nota.length; index += 1) {
     nota[index].classList.remove('selectedNota');
   }
 }
+
 function selectFamilyHouse() {
   for (let index = 0; index < family.length; index += 1) {
     family[index].addEventListener('click', (event) => {
@@ -71,12 +73,20 @@ function selectFamilyHouse() {
       event.target.classList.add('selectedFamily');
     });
   }
+}
+selectFamilyHouse();
+
+function selectedNota() {
   for (let index = 0; index < nota.length; index += 1) {
     nota[index].addEventListener('click', (event) => {
       removeSelectedNota();
       event.target.classList.add('selectedNota');
     });
   }
+}
+selectedNota();
+
+function selectedSubject() {
   for (let index = 0; index < subject.length; index += 1) {
     subject[index].addEventListener('click', (event) => {
       event.target.classList.toggle('selectedSubject');
@@ -86,15 +96,16 @@ function selectFamilyHouse() {
     console.log(house.options[house.selectedIndex].text);
   });
 }
-selectFamilyHouse();
+selectedSubject();
+
 function submitFunction() {
   const name = document.getElementById('input-name');
   const lastName = document.getElementById('input-lastname');
   const email = document.getElementById('input-email');
   const familia = document.querySelector('.selectedFamily');
   const casa = house.options[house.selectedIndex].text;
-  const nota = document.querySelector('.selectedNota');
-  const subject = document.querySelectorAll('.selectedSubject');
+  const notas = document.querySelector('.selectedNota');
+  const subjects = document.querySelectorAll('.selectedSubject');
   const comentario = document.querySelector('.textareaBox');
   const nomeText = document.createElement('h2');
   nomeText.innerHTML = `Nome: ${name.value} ${lastName.value}`;
@@ -105,11 +116,11 @@ function submitFunction() {
   const casaText = document.createElement('h2');
   casaText.innerHTML = `Casa: ${casa}`;
   const notaText = document.createElement('h2');
-  notaText.innerHTML = `Avaliação: ${nota.value}`;
+  notaText.innerHTML = `Avaliação: ${notas.value}`;
   const subjectText = document.createElement('h2');
   subjectText.innerHTML = 'Matérias: ';
-  for (let index = 0; index < subject.length; index += 1) {
-    subjectText.innerHTML += subject[index].value;
+  for (let index = 0; index < subjects.length; index += 1) {
+    subjectText.innerHTML += subjects[index].value;
   }
   const comentarioText = document.createElement('h2');
   comentarioText.innerHTML = `Observações: ${comentario.value}`;
