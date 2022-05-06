@@ -98,16 +98,17 @@ function selectedSubject() {
 }
 selectedSubject();
 
+const name = document.getElementById('input-name');
+const lastName = document.getElementById('input-lastname');
+const email = document.getElementById('input-email');
+const familia = document.querySelector('.selectedFamily');
+const casa = house.options[house.selectedIndex].text;
+const notas = document.querySelector('.selectedNota');
+const subjects = document.querySelectorAll('.selectedSubject');
+const comentario = document.querySelector('.textareaBox');
+const nomeText = document.createElement('h2');
+
 function submitFunction() {
-  const name = document.getElementById('input-name');
-  const lastName = document.getElementById('input-lastname');
-  const email = document.getElementById('input-email');
-  const familia = document.querySelector('.selectedFamily');
-  const casa = house.options[house.selectedIndex].text;
-  const notas = document.querySelector('.selectedNota');
-  const subjects = document.querySelectorAll('.selectedSubject');
-  const comentario = document.querySelector('.textareaBox');
-  const nomeText = document.createElement('h2');
   nomeText.innerHTML = `Nome: ${name.value} ${lastName.value}`;
   const emailText = document.createElement('h2');
   emailText.innerHTML = `Email: ${email.value}`;
