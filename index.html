@@ -9,29 +9,38 @@
 </head>
 <body>
   <header class="header">
-    <div>
+
       <img class="trybewarts-header-logo" src="images/trybewarts-header-logo.svg" alt="logotipo trybewarts">
-    </div>
+
+      <h1 class="trybewarts-header-title">Trybewarts</h1>
+
+    <form class="trybewarts-login">
+      <input id="email" type="email" placeholder="Email">
+      <input id="password" type="number" placeholder="Senha">
+      <button id="enter" class="button-enter" type="submit" >Entrar</button>
+    </form>
   </header>
-  <section>
-    <div class="trybewarts">
-      <h1>Trybewarts</h1>
-    </div>
-  </section>
+<main class="container">
+  <form id="evaluation-form">
+    <h2 class="text-h2">Formulário de Avaliação</h2>
+    <img id="trybewarts-forms-logo" src="images/trybewarts-colored.svg" alt="logo Trybewarts">
+  </form>
+</main>
 
   <div class="textAreaContainer">
     <label for="" class="textarea" id="textarea">Deixe seu comentário:</label><br>
     <textarea class="textareaBox" maxlength="500">
-    
+
     </textarea>
     <aside id="counter">500</aside>
   </div>
-  
+
   <br>
   <label id="label-infos">Você concorda com o uso das informações acima?</label>
   <input type="checkbox" id="agreement"><br><br>
   <button type="submit" id="submit-btn">Enviar</button>
   <footer id="footer">Direitos reservados à Trybewarts©</footer>
+
   <script src="script.js"></script>
 </body>
 </html>
