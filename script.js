@@ -95,38 +95,31 @@ function selectSubjects() {
 }
 selectSubjects();
 
-function submitFunction() {
-  const name = document.getElementById('input-name');
-  const lastName = document.getElementById('input-lastname');
-  const email = document.getElementById('input-email');
-  const familia = document.querySelector('.selectedFamily');
-  const casa = house.options[house.selectedIndex].text;
-  const notas = document.querySelector('.selectedNota');
-  const subjects = document.querySelectorAll('.selectedSubject');
-  const comentario = document.querySelector('.textareaBox');
-  const nomeText = document.createElement('h2');
-  nomeText.innerHTML = `Nome: ${name.value} ${lastName.value}`;
-  const emailText = document.createElement('h2');
-  emailText.innerHTML = `Email: ${email.value}`;
-  const familiaText = document.createElement('h2');
-  familiaText.innerHTML = `Família: ${familia.value}`;
-  const casaText = document.createElement('h2');
-  casaText.innerHTML = `Casa: ${casa}`;
-  const notaText = document.createElement('h2');
-  notaText.innerHTML = `Avaliação: ${notas.value}`;
-  const subjectText = document.createElement('h2');
-  subjectText.innerHTML = 'Matérias: ';
+const fullName = document.getElementById('input-name');
+const lastName = document.getElementById('input-lastname');
+const email = document.getElementById('input-email');
+const comentario = document.getElementById('textarea');
+const emailText = document.createElement('h2');
+const nomeText = document.createElement('h2');
+const familiaText = document.createElement('h2');
+const casaText = document.createElement('h2');
+const notaText = document.createElement('h2');
+const subjectText = document.createElement('h2');
+const newForm = document.createElement('form');
+const comentarioText = document.createElement('h2');
+
+function formRemove() {
+  form.remove();
+  image.remove();
+}
+
+function subjectValue(subjects) {
   for (let index = 0; index < subjects.length; index += 1) {
     subjectText.innerHTML += `${subjects[index].value}, `;
   }
-  const comentarioText = document.createElement('h2');
-  comentarioText.innerHTML = `Observações: ${comentario.value}`;
+}
 
-  form.remove();
-  const newForm = document.createElement('form');
-  newForm.setAttribute('id', 'evaluation-form');
-  main.appendChild(newForm);
-  image.remove();
+function newFormData() {
   newForm.append(nomeText);
   newForm.append(emailText);
   newForm.append(casaText);
@@ -134,6 +127,24 @@ function submitFunction() {
   newForm.append(subjectText);
   newForm.append(notaText);
   newForm.append(comentarioText);
-  newForm.style.flexDirection = 'column';
+}
+
+function submitFunction() {
+  const familia = document.querySelector('.selectedFamily');
+  const notas = document.querySelector('.selectedNota');
+  const subjects = document.querySelectorAll('.selectedSubject');
+  const casa = house.options[house.selectedIndex].text;
+  emailText.innerHTML = `Email: ${email.value}`;
+  nomeText.innerHTML = `Nome: ${fullName.value} ${lastName.value}`;
+  familiaText.innerHTML = `Família: ${familia.value}`;
+  casaText.innerHTML = `Casa: ${casa}`;
+  notaText.innerHTML = `Avaliação: ${notas.value}`;
+  subjectText.innerHTML = 'Matérias: ';
+  subjectValue(subjects);
+  comentarioText.innerHTML = `Observações: ${comentario.value}`;
+  formRemove();
+  newForm.setAttribute('id', 'evaluation-form');
+  main.appendChild(newForm);
+  newFormData();
 }
 submit.addEventListener('click', submitFunction);
