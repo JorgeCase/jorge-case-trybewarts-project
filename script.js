@@ -1,8 +1,17 @@
+/* eslint-disable no-shadow */
+/* eslint-disable max-lines-per-function */
 const agreeLabel = document.getElementById('label-infos');
 const agree = document.getElementById('agreement');
 const submit = document.getElementById('submit-btn');
 const counterDisplay = document.getElementById('counter');
 const textarea = document.getElementsByClassName('textareaBox')[0];
+const family = document.querySelectorAll('.family');
+const house = document.querySelector('#house');
+const subject = document.querySelectorAll('.subject');
+const nota = document.querySelectorAll('.nota');
+const main = document.querySelector('.container');
+const form = document.querySelector('#evaluation-form');
+const image = document.getElementById('trybewarts-forms-logo');
 
 submit.disabled = true;
 
@@ -45,15 +54,74 @@ function valueInputs() {
 }
 valueInputs();
 
-function sendButton(event) {
-  event.preventDefault();
-  // const validation = textInputValidation();
-  // if (validation === false) {
-  //   alert('Dados inválidos');
-  // } else {
-  //   alert(
-  //     'Dados enviados com sucesso! Obrigado por participar do concurso TrybeTrip.',
-  //   );
-  // }
+function removeSelected() {
+  for (let index = 0; index < family.length; index += 1) {
+    family[index].classList.remove('selectedFamily');
+  }
 }
-submit.addEventListener('click', sendButton);
+function removeSelectedNota() {
+  for (let index = 0; index < nota.length; index += 1) {
+    nota[index].classList.remove('selectedNota');
+  }
+}
+function selectFamilyHouse() {
+  for (let index = 0; index < family.length; index += 1) {
+    family[index].addEventListener('click', (event) => {
+      removeSelected();
+      event.target.classList.add('selectedFamily');
+    });
+  }
+  for (let index = 0; index < nota.length; index += 1) {
+    nota[index].addEventListener('click', (event) => {
+      removeSelectedNota();
+      event.target.classList.add('selectedNota');
+    });
+  }
+  for (let index = 0; index < subject.length; index += 1) {
+    subject[index].addEventListener('click', (event) => {
+      event.target.classList.toggle('selectedSubject');
+    });
+  }
+  house.addEventListener('change', () => {
+    console.log(house.options[house.selectedIndex].text);
+  });
+}
+selectFamilyHouse();
+function submitFunction() {
+  const name = document.getElementById('input-name');
+  const lastName = document.getElementById('input-lastname');
+  const email = document.getElementById('input-email');
+  const familia = document.querySelector('.selectedFamily');
+  const casa = house.options[house.selectedIndex].text;
+  const nota = document.querySelector('.selectedNota');
+  const subject = document.querySelectorAll('.selectedSubject');
+  const comentario = document.querySelector('.textareaBox');
+  const nomeText = document.createElement('h2');
+  nomeText.innerHTML = `Nome: ${name.value} ${lastName.value}`;
+  const emailText = document.createElement('h2');
+  emailText.innerHTML = `Email: ${email.value}`;
+  const familiaText = document.createElement('h2');
+  familiaText.innerHTML = `Família: ${familia.value}`;
+  const casaText = document.createElement('h2');
+  casaText.innerHTML = `Casa: ${casa}`;
+  const notaText = document.createElement('h2');
+  notaText.innerHTML = `Avaliação: ${nota.value}`;
+  const subjectText = document.createElement('h2');
+  subjectText.innerHTML = 'Matérias: ';
+  for (let index = 0; index < subject.length; index += 1) {
+    subjectText.innerHTML += subject[index].value;
+  }
+  const comentarioText = document.createElement('h2');
+  comentarioText.innerHTML = `Observações: ${comentario.value}`;
+  form.remove();
+  image.remove();
+  main.append(nomeText);
+  main.append(emailText);
+  main.append(familiaText);
+  main.append(casaText);
+  main.append(notaText);
+  main.append(subjectText);
+  main.append(comentarioText);
+  main.style.flexDirection = 'column';
+}
+submit.addEventListener('click', submitFunction);
