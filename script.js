@@ -44,3 +44,16 @@ function valueInputs() {
   });
 }
 valueInputs();
+
+function sendButton(event) {
+  event.preventDefault();
+  // const validation = textInputValidation();
+  // if (validation === false) {
+  //   alert('Dados inválidos');
+  // } else {
+  //   alert(
+  //     'Dados enviados com sucesso! Obrigado por participar do concurso TrybeTrip.',
+  //   );
+  // }
+}
+submit.addEventListener('click', sendButton);

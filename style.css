@@ -9,6 +9,10 @@
   background-color: rgb(50, 167, 145);
 }
 
+#trybewarts-header-title {
+  display: flex;
+}
+
 .trybewarts-login {
   display: flex;
 }
@@ -46,15 +50,19 @@
   flex-direction: column;
   width: 370px;
 }
+
 #counter {
   width: 30px;
   height: 30px;
-  /* background-color: red; */
   font-size: 1.3em;
-  position: absolute;
+  margin-left: 430px;
   bottom: 50px;
   left: calc(50% + 195px);
   transform: translate(-100%);
+}
+
+textarea {
+  resize: none;
 }
 
 .textAreaContainer {
@@ -63,6 +71,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .textareaBox {
   width: 400px;
   height: 300px;
@@ -82,13 +91,11 @@
   opacity: 0.5;
 }
 
-
 #footer {
   background-color: black;
   color: white;
   height: 150px;
   width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
