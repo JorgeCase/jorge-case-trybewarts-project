@@ -1,7 +1,7 @@
 <body>
   <h1 align="center">Project Todo-list</h1>
   <div align="center">
-    <img src="trybewarts.gif" alt="Imagem da aplicação" align="center" width=250px>
+    <img src="trybewarts.gif" alt="Imagem da aplicação" align="center" width=500px>
   </div>
   <h2 align="center">Descrição</h2>
   <p align="center">Primeiro <b>projeto em grupo</b> do curso, colocamos em prática habilidades de criação de formulários, responsividade e posicionamento de objetos na tela, desenvolvendo uma página de formulário para a escola de magia de Trybewarts, em que as pessoas usuárias poderiam enviar feedbacks sobr a escola.</p>
@@ -32,7 +32,7 @@
     <li>Acrescente ao formulário um select com o id <code>house</code> contendo as opções <code>Gitnória</code>, <code>Reactpuff</code>, <code>Corvinode</code> e <code>Pytherina</code>.</li>
     <li>Posicione os campos de <code>Nome</code> e <code>Sobrenome</code> para que fiquem em linha.</li>
     <li>Acrescente ao formulário um campo de entrada para qual família a pessoa estudante se identifica.</li>
-    <li>Crie campos de entrada do tipo `checkbox` contendo seis opções</li>
+    <li>Crie campos de entrada do tipo <code>checkbox</code> contendo seis opções</li>
     <li>Crie campo de entrada para avaliar de 1 a 10 o nível de satisfação com a Trybewarts</li>
     <li>Crie uma textarea com o id <code>textarea</code> e uma label com a classe <code>textarea</code> contendo o número máximo de caracteres igual à 500</li>
     <li>Crie um campo de entrada do tipo <code>checkbox</code> com o id <code>agreement</code> para validar as informações</li>
@@ -47,6 +47,10 @@
     <li>Preencha o arquivo feedback.md . Aproveite o espaço para deixar seus feedbacks sobre o projeto.</li>
     <li>Realize o desenvolvimento da versão mobile do formulário Trybewarts.</li>
   </ul>
+
+  <div align="center">
+    Participaram deste projeto além de mim, os colegas <b>Danilo Leão de Oliveira</b> e <b>Leandro Miranda</b>
+  </div>
 
   <div align="center">
     <h4 align="center">Para mais informações sobre a formação de Desenvolvimento Web da Trybe, clique no link abaixo.</h4>
