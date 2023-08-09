@@ -13,7 +13,7 @@
   <div align="center">
     <dl>
         <dt>Para acessar o projeto faça o clone do repositório.</dt>
-        <dd>No terminal utilize o comando: <code>git@github.com:JorgeCase/jorge-case-trybewarts-project.git</code></dd>
+        <dd>No terminal utilize o comando: <code>git clone git@github.com:JorgeCase/jorge-case-trybewarts-project.git</code></dd>
         <dd>Entre na pasta do repositório que você acabou de clonar: <code>cd jorge-case-trybewarts-project</code></dd>
     </dl>
   </div>
